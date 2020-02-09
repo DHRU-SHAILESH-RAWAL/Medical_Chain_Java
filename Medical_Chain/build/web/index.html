@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Medical Chain</title>
+        <meta name="description" content="particles.js is a lightweight JavaScript library for creating particles.">
+        <meta name="author" content="Vincent Garreau" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" media="screen" href="demo/css/style.css">
+        <style>
+            body {
+                overflow: hidden;
+            }
+            .button {
+                background-color: white;
+                border: none;
+                color: white;
+                padding: 20px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                cursor: pointer;
+            }
+            .button5 {
+                border-radius: 10%;
+            }
+            .set{
+              transform: translate(550px,100px);
+                display: flex;
+            }
+
+            .button:hover {
+                background-color: skyblue;
+            }
+
+        </style>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css'>
+        <script src="https://static.landbot.io/landbot-widget/landbot-widget-1.0.0.js"></script>
+        <script src="https://static.landbot.io/landbot-widget/landbot-widget-1.0.0.js"></script>
+        <script>
+            var myLandbot = new LandbotLivechat({
+                index: 'https://landbot.io/u/H-231540-OXZDUK64C6A6RG4A/index.html',
+            });
+        </script>
+    </head>
+    <body>
+
+        <!-- particles.js container -->
+        <div id="particles-js">
+            <div class="h_title"><b>Medical Chain</b><br><h1>Distributed Health Record Storage System</h1></div>
+            <div class="set">
+                <center>
+                    <button class="button button5"><a href="Admin.html">Admin Login</a></button>&nbsp;  
+                    <button class="button button5"><a href="user_login.html">User Login</a></button>
+                </center>
+            </div>
+
+        </div>
+
+        <!-- scripts -->
+        <script src="particles.js"></script>
+        <script src="demo/js/app.js"></script>
+
+        <script>
+            var count_particles, stats, update;
+            stats = new Stats;
+            stats.setMode(0);
+            stats.domElement.style.position = 'absolute';
+            stats.domElement.style.left = '0px';
+            stats.domElement.style.top = '0px';
+            document.body.appendChild(stats.domElement);
+            count_particles = document.querySelector('.js-count-particles');
+            update = function () {
+                stats.begin();
+                stats.end();
+                if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
+                    count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
+                }
+                requestAnimationFrame(update);
+            };
+            requestAnimationFrame(update);
+        </script>
+
+
+    </body>
+</html>
